@@ -29,7 +29,7 @@ func (c *ContaCorrente) Depositar(valorDoDeposito float64) (string, float64){
 
 }
 
-func (c *ContaCorrente)Transferir(valoDaTransferencia float64, contaDestino *ContaCorrente)bool{
+func (c *ContaCorrente) Transferir(valoDaTransferencia float64, contaDestino *ContaCorrente)bool{
 	if valoDaTransferencia < c.saldo && valoDaTransferencia > 0 {
 		c.saldo -= valoDaTransferencia
 		contaDestino.Depositar(valoDaTransferencia)
