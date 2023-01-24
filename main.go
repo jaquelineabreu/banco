@@ -29,19 +29,26 @@ func (c *ContaCorrente) Depositar(valorDoDeposito float64) (string, float64){
 
 }
 
-func main(){
-	
+func (c *ContaCorrente)Transferir(valoDaTransferencia float64, contaDestino *ContaCorrente)bool{
+	if valoDaTransferencia < c.saldo && valoDaTransferencia > 0 {
+		c.saldo -= valoDaTransferencia
+		contaDestino.Depositar(valoDaTransferencia)
+		return true
+	}else{
+		return false
+	}
+}
 
-	contaDaIvete := ContaCorrente{}
+func main(){	
 
-	contaDaIvete.titular = "Ivete"
-	contaDaIvete.saldo = 500
+	contaDaIvete := ContaCorrente{titular:"Ivete", saldo: 500}
+	contaDoJorge := ContaCorrente{titular: "Jorge", saldo: 100}
 
-	fmt.Println(contaDaIvete.saldo)
-	
-	status, valor := contaDaIvete.Depositar(1000)
+	status := contaDoJorge.Transferir(-200, &contaDaIvete)
 
-	fmt.Println(status,valor)
+	fmt.Println(status)
+	fmt.Println(contaDaIvete)
+	fmt.Println(contaDoJorge)
 
 
 	
