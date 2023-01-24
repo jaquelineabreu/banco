@@ -8,11 +8,9 @@ import (
 ) 
 func main(){	
 
-	contaDaMarisa := contas.ContaCorrente{Titular:clientes.Titular{
-		Nome: "Marisa",
-		CPF:"123.111.123.12",
-		Profissao: "Desenvolvedora"},
-		NumeroAgencia:123, NumeroConta:123456, Saldo:100}
+	clienteMarisa := clientes.Titular{"Marisa", "123.111.123.12", "Desenvolvedora"}
+
+	contaDaMarisa := contas.ContaCorrente{clienteMarisa, 123, 123456, 100}
 
 	fmt.Println(contaDaMarisa)
 	
