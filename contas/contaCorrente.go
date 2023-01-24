@@ -3,10 +3,10 @@ package contas
 import "github.com/jaquelineabreu/banco/clientes"
 
 type ContaCorrente struct{
-	Titular clientes.Titular 
-	NumeroAgencia int64
-	NumeroConta int64
-	saldo float64
+	Titular 		clientes.Titular 
+	NumeroAgencia 	int64
+	NumeroConta 	int64
+	saldo 			float64
 }
 
 func (c *ContaCorrente) Sacar(valordoSaque float64) string{
