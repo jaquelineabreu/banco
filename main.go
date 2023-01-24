@@ -4,14 +4,20 @@ import (
 	"fmt"
 
 	"github.com/jaquelineabreu/banco/contas"
-	"github.com/jaquelineabreu/banco/clientes"
+	
 ) 
 func main(){	
 
-	clienteMarisa := clientes.Titular{"Marisa", "123.111.123.12", "Desenvolvedora"}
+	//"github.com/jaquelineabreu/banco/clientes"
 
-	contaDaMarisa := contas.ContaCorrente{clienteMarisa, 123, 123456, 100}
+	//clienteMarisa := clientes.Titular{"Marisa", "123.111.123.12", "Desenvolvedora"}	
 
-	fmt.Println(contaDaMarisa)
+	//contaDaMarisa := contas.ContaCorrente{clienteMarisa, 123, 123456, 100}
+
+	contaMarisa := contas.ContaCorrente{}
+
+	contaMarisa.Depositar(100)
+
+	fmt.Println(contaMarisa.ObterSaldo())
 	
 }
